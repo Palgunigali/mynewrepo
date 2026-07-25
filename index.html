@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sum of Two Numbers</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .input-group { margin-bottom: 10px; }
+        label { display: inline-block; width: 130px; }
+        button { margin-top: 10px; padding: 5px 15px; cursor: pointer; }
+        #result { margin-top: 15px; font-weight: bold; font-size: 1.2em; }
+    </style>
+</head>
+<body>
+
+    <h2>Add Two Numbers</h2>
+    
+    <div class="input-group">
+        <label for="num1">First Number:</label>
+        <input type="number" id="num1" placeholder="Enter first number">
+    </div>
+
+    <div class="input-group">
+        <label for="num2">Second Number:</label>
+        <input type="number" id="num2" placeholder="Enter second number">
+    </div>
+
+    <button onclick="calculateSum()">Calculate Sum</button>
+
+    <p id="result">Total: </p>
+
+    <script>
+        function calculateSum() {
+            // Get values from the input fields using document.getElementById
+            // parseFloat ensures the inputs are treated as numbers, not text strings
+            const number1 = parseFloat(document.getElementById('num1').value);
+            const number2 = parseFloat(document.getElementById('num2').value);
+
+            // Validate that both inputs contain valid numbers
+            if (isNaN(number1) || isNaN(number2)) {
+                document.getElementById('result').innerText = "Please enter valid numbers in both fields.";
+                return;
+            }
+
+            // Calculate the total
+            const sum = number1 + number2;
+
+            // Display the output back to the page
+            document.getElementById('result').innerText = "Total: " + sum;
+        }
+    </script>
+
+</body>
+</html>
